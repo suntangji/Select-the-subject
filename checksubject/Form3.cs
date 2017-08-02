@@ -30,9 +30,9 @@ namespace checksubject
         {
             //MainForm f = new MainForm();
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "server=.\\SQLExpress;uid=sa;pwd=a3252016;database=SubjiectSelection";
+            con.ConnectionString = "server=.\\SQLExpress;uid=sa;pwd=a3252016;database=select-the-topic";
             con.Open();
-            string sql = string.Format("select 教师名 from 教师 where 教师号='{0}'", id);
+            string sql = string.Format("select tname from T where tno='{0}'", id);
             SqlCommand cmd = new SqlCommand(sql, con);
             // cmd.Connection = con;
             // SqlDataReader dr = cmd.ExecuteReader();
@@ -123,7 +123,7 @@ namespace checksubject
         {
 
             this.panel1.Controls.Clear();
-            Form8 f8 = new Form8(id);
+            Form10 f8 = new Form10(id);
             //f8.button1.Visible = false;
             f8.TopLevel = false;    //设置为非顶级窗体
             f8.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; //设置窗体为非边框样式
@@ -149,12 +149,32 @@ namespace checksubject
         {
             this.panel1.Controls.Clear();
             Form8 f8 = new Form8(id);
-            f8.button1.Visible = false;
+            //f8.button1.Visible = false;
             f8.TopLevel = false;    //设置为非顶级窗体
             f8.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; //设置窗体为非边框样式
             f8.Dock = System.Windows.Forms.DockStyle.Fill;                  //设置样式是否填充整个panel
             panel1.Controls.Add(f8);      //添加窗体
             f8.Show();					  //窗体运行
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm f1 = new MainForm();
+            f1.Show();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
+            this.panel1.Controls.Clear();
+            Form16 f8 = new Form16(id);
+            //f8.button1.Visible = false;
+            f8.TopLevel = false;    //设置为非顶级窗体
+            f8.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; //设置窗体为非边框样式
+            f8.Dock = System.Windows.Forms.DockStyle.Fill;                  //设置样式是否填充整个panel
+            panel1.Controls.Add(f8);      //添加窗体
+            f8.Show();
         }
     }
 }

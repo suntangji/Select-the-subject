@@ -24,9 +24,9 @@ namespace checksubject
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "server=.\\SQLExpress;uid=sa;pwd=a3252016;database=SubjiectSelection";
+            con.ConnectionString = "server=.\\SQLExpress;uid=sa;pwd=a3252016;database=select-the-topic";
             con.Open();
-           // string sql = string.Format("select count(*) from 教师 where 教师号='{0}'", textBox2.Text);
+           // string sql = string.Format("select count(*) from T where tno='{0}'", textBox2.Text);
             //SqlConnection cnn = new SqlConnection(sqlconn);
             //SqlCommand cmd = new SqlCommand(sql, con);
             
@@ -34,42 +34,57 @@ namespace checksubject
             
 
 
-                if (textBox1.Text != "")
+                if (textBox1.Text != ""&&
+                textBox2.Text != ""&&
+                richTextBox1.Text!=""&&
+                richTextBox2.Text!="")
                 {
-                    StringBuilder strsql = new StringBuilder();
-                    strsql.Append("insert into 题目表");
-                    strsql.Append(" values (");
-                    strsql.Append("'" + textBox1.Text.Trim().ToString() + "',");
-                    strsql.Append("'" + id + "',");
-                    strsql.Append("'" + richTextBox1.Text.Trim().ToString() + "'");
-                    //strsql.Append("'" + textBox6.Text.Trim().ToString() + "'");
-                    strsql.Append(");");
-                try
+                string sql2 = string.Format("select count(tpno) from CT where tno={0}", id);
+                SqlCommand cmd3 = new SqlCommand(sql2, con);
+                int dra =(int)cmd3.ExecuteScalar();
+                if(dra >=3)
+                { MessageBox.Show("已达题目上限",
+                                      "信息提示",
+                                       MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                    con.Close();
+                   /// con.Open();
+
+                }
+                else
                 {
-                    using (SqlCommand cmd2 = new SqlCommand(strsql.ToString(), con))
+                    string strsql = string.Format("insert into TP values('{0}','{1}','{2}','{3}');insert into CT  values('{4}','{5}')", textBox1.Text, textBox2.Text, richTextBox1.Text, richTextBox2.Text, id, textBox1.Text);
+
+                    try
                     {
+                        SqlCommand cmd2 = new SqlCommand(strsql.ToString(), con);
+
                         // con.Open();    //con.Open();//打开数据库                     
                         cmd2.ExecuteNonQuery();
+
+                        con.Close();
+                        con.Dispose();
+
+                        MessageBox.Show("添加成功！",
+                                         "信息提示",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);//信息显示
+                                                                     //this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(),
+                                         "信息提示",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Error);
                         con.Close();
                         con.Dispose();
                     }
-                    MessageBox.Show("添加成功！",
-                                     "信息提示",
-                                     MessageBoxButtons.OK,
-                                     MessageBoxIcon.Information);//信息显示
-                                                                 //this.Close();
-                }
-                catch(Exception)
-                {
-                    MessageBox.Show("题目名已存在！",
-                                     "信息提示",
-                                     MessageBoxButtons.OK,
-                                     MessageBoxIcon.Error);
 
                 }
 
 
-                }
+            }
 
 
 
@@ -82,6 +97,16 @@ namespace checksubject
                 }
             
             
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form7_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

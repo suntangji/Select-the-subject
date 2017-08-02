@@ -18,3 +18,7 @@ E:\vsproject\checksubject\checksubject\obj\Debug\checksubject.Form9.resources
 E:\vsproject\checksubject\checksubject\obj\Debug\checksubject.Form10.resources
 E:\vsproject\checksubject\checksubject\obj\Debug\checksubject.Form11.resources
 E:\vsproject\checksubject\checksubject\obj\Debug\checksubject.Form12.resources
+E:\vsproject\checksubject\checksubject\obj\Debug\checksubject.Form13.resources
+E:\vsproject\checksubject\checksubject\obj\Debug\checksubject.Form14.resources
+E:\vsproject\checksubject\checksubject\obj\Debug\checksubject.Form15.resources
+E:\vsproject\checksubject\checksubject\obj\Debug\checksubject.Form16.resources

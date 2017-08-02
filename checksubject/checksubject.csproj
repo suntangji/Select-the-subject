@@ -73,6 +73,30 @@
     <Compile Include="Form12.Designer.cs">
       <DependentUpon>Form12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form13.Designer.cs">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form14.Designer.cs">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form15.Designer.cs">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form16.Designer.cs">
+      <DependentUpon>Form16.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +170,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SubjiectSelectionDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SubjiectSelectionDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubjiectSelectionDataSet4.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +186,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form12.resx">
       <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form13.resx">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form14.resx">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form15.resx">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form16.resx">
+      <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -243,6 +284,17 @@
     </None>
     <None Include="SubjiectSelectionDataSet3.xss">
       <DependentUpon>SubjiectSelectionDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SubjiectSelectionDataSet4.xsc">
+      <DependentUpon>SubjiectSelectionDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SubjiectSelectionDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubjiectSelectionDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SubjiectSelectionDataSet4.xss">
+      <DependentUpon>SubjiectSelectionDataSet4.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

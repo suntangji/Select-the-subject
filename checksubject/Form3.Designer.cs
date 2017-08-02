@@ -39,27 +39,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 15F);
-            this.label1.Location = new System.Drawing.Point(430, 18);
+            this.label1.Font = new System.Drawing.Font("宋体", 20F);
+            this.label1.Location = new System.Drawing.Point(393, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 25);
+            this.label1.Size = new System.Drawing.Size(355, 34);
             this.label1.TabIndex = 0;
-            this.label1.Text = "欢迎使用学生选题系统";
+            this.label1.Text = "欢迎使用教师管理系统";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(226, 62);
+            this.panel1.Location = new System.Drawing.Point(226, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(826, 603);
+            this.panel1.Size = new System.Drawing.Size(826, 591);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -116,6 +117,7 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "查看报告";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button6
             // 
@@ -160,12 +162,23 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(983, 20);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(69, 33);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "退出";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1081, 692);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -199,5 +212,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button7;
     }
 }

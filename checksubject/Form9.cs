@@ -37,13 +37,22 @@ namespace checksubject
 
         private void Form9_Load(object sender, EventArgs e)
         {
-            // TODO: 这行代码将数据加载到表“subjiectSelectionDataSet3.题目表”中。您可以根据需要移动或删除它。
-            this.题目表TableAdapter.FillBy(this.subjiectSelectionDataSet3.题目表,id);
-            // TODO: 这行代码将数据加载到表“subjiectSelectionDataSet2.题目表”中。您可以根据需要移动或删除它。
-            //题目表TableAdapter.Update(this.subjiectSelectionDataSet3.题目表);
+            using (SqlConnection conn = new SqlConnection("server =.\\SQLEXPRESS; database=select-the-topic; uid = sa; Pwd = a3252016"))
+            {
+                conn.Open();
+                string sql = string.Format("select TP.tpno,tpname,tpcon,goal from TP,CT where tno = {0} and TP.tpno=CT.tpno", id); // 
 
+                //SqlConnection cnn = new SqlConnection(sqlconn);
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                //MessageBox.Show(da.ToString());
+                DataTable dt = new DataTable();
+                // MessageBox.Show(dt.ToString());
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+            }
         }
-
        
 
         private void fillByToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

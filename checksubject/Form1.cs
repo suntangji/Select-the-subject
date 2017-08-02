@@ -62,7 +62,7 @@ namespace checksubject
        
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" &&
+            if (textBox1.Text == "" ||
                     textBox2.Text == ""
                     )
             {
@@ -72,12 +72,12 @@ namespace checksubject
                                      MessageBoxIcon.Error);
             }
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "server=.\\SQLExpress;uid=sa;pwd=a3252016;database=SubjiectSelection";
+            con.ConnectionString = "server=.\\SQLExpress;uid=sa;pwd=a3252016;database=select-the-topic";
             con.Open();
             //string sql;
             if (radioButton1.Checked == true)
             {
-                string sql = string.Format("select * from 学生账号 where 学号='{0}'and 密码='{1}'", textBox1.Text, textBox2.Text);
+                string sql = string.Format("select * from Saccount where sno='{0}'and password='{1}'", textBox1.Text, textBox2.Text);
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -104,7 +104,7 @@ namespace checksubject
             }
             else if(radioButton2.Checked == true)
             {
-                string sql = string.Format("select * from 教师账号 where 教师号='{0}'and 密码='{1}'", textBox1.Text, textBox2.Text);
+                string sql = string.Format("select * from Taccount where tno='{0}'and password='{1}'", textBox1.Text, textBox2.Text);
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())

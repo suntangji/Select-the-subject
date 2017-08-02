@@ -11,22 +11,29 @@ using System.Windows.Forms;
 
 namespace checksubject
 {
-    public partial class Form8 : Form
+    public partial class Form16 : Form
     {
         public string id;
-        public Form8(string id)
+        public Form16(string id)
         {
             InitializeComponent();
             this.id = id;
         }
 
-        private void Form8_Load(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
 
+        private void Form16_Load(object sender, EventArgs e)
+        {
             using (SqlConnection conn = new SqlConnection("server =.\\SQLEXPRESS; database=select-the-topic; uid = sa; Pwd = a3252016"))
             {
                 conn.Open();
-                string sql = string.Format("select S.sno,sname,sdept,sclass,TP.tpname from S,XT,CT,TP where tno = {0}and CT.tpno =XT.tpno and XT.sno =S.sno and CT.tpno = TP.tpno", id); // select rpname,grade from UP,PY where sno = {0} and UP.rpname=PY.rpname",
+                // string sql = "select sno from S "; // 
+                string sql = string.Format(" select UP.sno,RP.rpname,rpcon from UP,RP,XT,CT where UP.sno =XT.sno and CT.tpno=XT.tpno and CT.tno= '{0}'and UP.rpname =RP.rpname", id);
+                //string sql ="select RP.rpname,rpcon from XT,CT,TP,RP,UP";//and RP.rpname =UP.rpname   where CT.tpno =XT.tpno and XT.sno =UP.sno 
+
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 //MessageBox.Show(da.ToString());
                 DataTable dt = new DataTable();
@@ -36,27 +43,6 @@ namespace checksubject
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
             }
-
-        }
-
-
-    
-   
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-     
-    
-
-      
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

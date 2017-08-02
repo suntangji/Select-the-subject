@@ -1,6 +1,6 @@
 ﻿namespace checksubject
 {
-    partial class Form9
+    partial class Form16
     {
         /// <summary>
         /// Required designer variable.
@@ -34,29 +34,23 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(160, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(112, 40);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(583, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(592, 366);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Form9
+            // Form16
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 462);
+            this.ClientSize = new System.Drawing.Size(716, 447);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form9";
-            this.Text = "Form9";
-            this.Load += new System.EventHandler(this.Form9_Load);
+            this.Name = "Form16";
+            this.Text = "Form16";
+            this.Load += new System.EventHandler(this.Form16_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

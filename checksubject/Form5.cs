@@ -21,9 +21,9 @@ namespace checksubject
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "server=.\\SQLExpress;uid=sa;pwd=a3252016;database=SubjiectSelection";
+            con.ConnectionString = "server=.\\SQLExpress;uid=sa;pwd=a3252016;database=select-the-topic";
 
-            string sql = string.Format("select count(*) from 教师账号 where 教师号='{0}'", textBox1.Text);
+            string sql = string.Format("select count(*) from Taccount where tno='{0}'", textBox1.Text);
             //SqlConnection cnn = new SqlConnection(sqlconn);
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();
@@ -31,7 +31,7 @@ namespace checksubject
             if (a == 0)
             {
                 StringBuilder strsql = new StringBuilder();
-                strsql.Append("insert into 教师");
+                strsql.Append("insert into T");
                 strsql.Append(" values (");
                 strsql.Append("'" + textBox1.Text.Trim().ToString() + "',");
                 strsql.Append("'" + textBox2.Text.Trim().ToString() + "',");
@@ -47,7 +47,7 @@ namespace checksubject
                     textBox4.Text == textBox5.Text
                     )
                 {
-                    strsql.Append("insert into 教师账号");
+                    strsql.Append("insert into Taccount");
                     strsql.Append(" values (");
                     strsql.Append("'" + textBox1.Text.Trim().ToString() + "',");
                     strsql.Append("'" + textBox4.Text.Trim().ToString() + "'");
